@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/ovidiub13/reviewboard-docker.png?label=ready&title=Ready)](https://waffle.io/ovidiub13/reviewboard-docker)
 [![Build Status](https://travis-ci.org/ovidiub13/reviewboard-docker.svg?branch=master)](https://travis-ci.org/ovidiub13/reviewboard-docker)
 
 # ReviewBoard image for production use
