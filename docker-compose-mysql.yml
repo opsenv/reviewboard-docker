@@ -1,20 +1,21 @@
-reviewboard:
-    image: ovidiub13/reviewboard
-    links:
-        - db:dbserver
-        - memcache
-    environment:
-        DATABASE: 'mysql'
-    ports:
-        - "80:80"
-
-db:
-    image: mysql:5.7.13
-    environment:
-        MYSQL_ROOT_PASSWORD: 'supersecretpassword'
-        MYSQL_DATABASE: 'reviewboard'
-    volumes:
-        - mysql-utf8.cnf:/etc/mysql/conf.d/mysql-utf8.cnf:ro
-        - /var/lib/mysql
-memcache:
-    image: memcache:1.4.28
+version: '2'
+services:
+    reviewboard:
+        image: ovidiub13/reviewboard
+        links:
+            - db:dbserver
+            - memcache
+        environment:
+            DATABASE: 'mysql'
+        ports:
+            - "80:80"
+    db:
+        image: mysql:5.7.13
+        environment:
+            MYSQL_ROOT_PASSWORD: 'reviewboard'
+            MYSQL_DATABASE: 'reviewboard'
+        volumes:
+            - mysql-utf8.cnf:/etc/mysql/conf.d/mysql-utf8.cnf:ro
+            - /data/mysql:/var/lib/mysql
+    memcache:
+        image: memcache:1.4.28

@@ -2,9 +2,10 @@ FROM httpd:2.4.20
 MAINTAINER Ovidiu-Florin Bogdan (ovidiu.b13@gmail.com)
 
 ENV DEBIAN_FRONTEND noninteractive
-ENV REVIEWBOARD_VERSION 2.5.6.1
+ENV REVIEWBOARD_VERSION 3.0
 ENV MOD_WSGI_VERSION 4.5.3
 
+ADD ./sources.list  /etc/apt/sources.list
 RUN apt update && apt install -y \
     patch \
     subversion \
